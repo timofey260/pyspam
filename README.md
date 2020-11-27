@@ -7,6 +7,6 @@ used to spam messages by ctrl + v
 # need
 pyautogui
 
-$pip install pyautogu
+$pip install pyautogui
 time
 $pip install time

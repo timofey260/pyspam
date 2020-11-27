@@ -14,4 +14,4 @@ time:
   $pip install time
   
 # ps
-if time dont work, continue
+if time don`t download, continue

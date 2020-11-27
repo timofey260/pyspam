@@ -8,5 +8,7 @@ used to spam messages by ctrl + v
 pyautogui
 
 $pip install pyautogui
+
 time
+
 $pip install time

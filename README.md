@@ -12,3 +12,6 @@ pyautogui:
 time:
 
   $pip install time
+  
+#ps
+if time dont work, continue

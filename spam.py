@@ -130,6 +130,7 @@ while run:
             print(rg + '%1d message send!' % (num + 1))  # print messages in screen
             pyautogui.write(a)
             num = num + 1
+        pyautogui.press('enter')
         print('=====process=====')
         pyautogui.alert('succefuly send %2d messages!' % (le))  # result
     elif name == '2':

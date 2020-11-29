@@ -88,12 +88,12 @@ while run:
         if sta == 'all':
             num = 0  # num - index of file(int)
             fil = f + ".txt"  # file.txt
-            #try:  # errorfind
-            file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'all'
-            #except:
-                #error(1, fil, x)
+            try:  # errorfind
+                file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'all'
+            except:
+                error(1, fil, x)
             filew = file
-            le = len(file)
+            le = len(filew)
         elif sta != 'all':
 
             try:  # errorfind
@@ -102,11 +102,12 @@ while run:
                 error(2, sta, x)
             num = 0
             fil = f + ".txt"
-            #try:  # errorfind
-            file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'slice'
-            filew = file[:sta]  # slice of file
-            #except:
-                #error(1, fil, x)
+            try:  # errorfind
+                file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'slice'
+                filew = file[:sta]  # slice of file
+            except:
+                error(1, fil, x)
+            le = len(filew)
             if sta > len(filew):
                 error(3, uns, x)
 

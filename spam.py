@@ -1,22 +1,27 @@
-'''
-Made by Timofey
-Discord: TiMoFey#5066
-Github: https://github.com/timofey260/pyspam
-site: https://timofey26s.tilda.ws
-Errors:
-	1. FileError: file not found!
-	2. NumError: {num} not a number!
-	3. IndexError: index out of range!
-	4. TypeError: {str} is not 1,2 or 3!
-	5. ErrorError: Error not found! correct def error()
 
-'''
+
+
 import pyautogui
 from time import sleep # sleep block on load{wait...}
 from colorama import Fore, init # for colored text
 from os import system # system use for clear messages
 init(Fore) # colorama init
 uns = ''  #unuse str. uses for def error()
+cr = (' ____________________________________________ \n'
+	  '|-----------------Made by Timofey------------|\n'
+	  '|Discord: TiMoFey#5066                       |\n'
+	  '|Github: https://github.com/timofey260/pyspam|\n'
+	  '|site: https://timofey26s.tilda.ws           |\n'
+	  '|____________________________________________|\n')
+
+err = ( ' _________________________________________________________ \n'
+		'|---------------------------Errors------------------------|\n'
+		'|1. FileError: file not found!                            |\n'
+		'|2. NumError: {str} not a number!                         |\n'
+		'|3. IndexError: index out of range!                       |\n'
+		'|4. TypeError: {str} is not 1,2 or 3!                     |\n'
+		'|5. ListError: Error not found! correct def error()       |\n'
+		'|_________________________________________________________|\n')
 b = ('_____   +                     \n'
      '  |           /\\      /\\    \n'
      '  |     |    /  \\    /  \\   \n'
@@ -45,7 +50,9 @@ def error(num, result): # errors: easy moding
 
 print(Fore.YELLOW + "[" + Fore.CYAN + "1" + Fore.YELLOW + "]file")    		#menu buttons
 print(Fore.YELLOW + "[" + Fore.CYAN + "2" + Fore.YELLOW + "]message")
-print(Fore.YELLOW + "[" + Fore.CYAN + "3" + Fore.YELLOW + "]exit")
+print(Fore.YELLOW + "[" + Fore.CYAN + "3" + Fore.YELLOW + "]credits")
+print(Fore.YELLOW + "[" + Fore.CYAN + "4" + Fore.YELLOW + "]Errorlist")
+print(Fore.YELLOW + "[" + Fore.CYAN + "5" + Fore.YELLOW + "]exit")
 name = input('>>> ') # name: 1, 2 or 3(int)
 st = 0
 if name == '1':
@@ -132,7 +139,16 @@ elif name == '2':
 	    pyautogui.press('enter')
 
 	pyautogui.alert('succefuly send %2d messages!' %(n)) # result
-elif name == '3':
+elif name == '3': # credits
+	print(cr)
+	input()
+
+elif name == '4': # errorlist
+	print(err)
+	input()
+
+elif name == '5':
 	exit()
+
 else:
 	error(4, name)

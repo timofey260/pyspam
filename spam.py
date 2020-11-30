@@ -4,8 +4,7 @@
 # import______________________________________________
 from os import system  # system use for clear messages
 from time import sleep  # sleep block on load{wait...}
-import codecs
-import pyautogui
+import codecs, pyautogui
 from colorama import Fore, init  # for colored text
 
 # inits________________________________________________
@@ -16,32 +15,34 @@ rr = Fore.RED
 rg = Fore.GREEN
 rc = Fore.CYAN
 ry = Fore.YELLOW
+# vars_______________________________________
+x = 6
+v = "1.1.7"
+run = True
+# banners____________________________________________
 
-# banners_________________________________________________
-b = ('_____   +                     \n'
-     '  |           /\\      /\\    \n'
-     '  |     |    /  \\    /  \\   \n'
-     '  |     |   /    \\  /    \\  \n'
-     '  |     |  /      \\/      \\ \n'
-     '========spam_programm=======  \n')  # menu
+b = ('_____   +                       |||||||||||||||||| \n'
+     '  |           /\\      /\\        |||||(0)|||(0)|||| \n'
+     '  |     |    /  \\    /  \\       |||||||||||||||||| \n'
+     '  |     |   /    \\  /    \\      ||||0\\|||||||/0||| \n'
+     '  |     |  /      \\/      \\     ||||\\00000000/|||| \n'
+     '========spam_programm===========|||||||||||||||||| \n')  # menu
 cr = (rg + ' ________________________________________________ \n'
            '|-------------------Made by Timofey--------------|\n'
            '|Discord: TiMoFey#5066                           |\n'
            '|Github: https://github.com/timofey260/pyspam    |\n'
            '|site: https://timofey26s.tilda.ws               |\n'
            '|________________________________________________|\n')
-
 err = (rr + ' _________________________________________________________ \n'
             '|---------------------------Errors------------------------|\n'
             '|1. FileError: file not found!                            |\n'
             '|2. NumError: {str} not a number!                         |\n'
             '|3. IndexError: index out of range!                       |\n'
-            '|4. TypeError: {str} is not 1 - 5 !                       |\n'
+            '|4. TypeError: {str} is not 1 - %1s!                        |\n' 
             '|5. ListError: Error not found! correct def error()       |\n'
-            '|_________________________________________________________|\n')
+            '|_________________________________________________________|\n' %(x))
 
-
-# deffs_______________________________________________________
+# deffs___________________________________________
 def error(value, result, ver):  # errors: easy moding
     if value == 1:
         print('FileError: %1s file not found!' % result)
@@ -71,10 +72,6 @@ def menu():
     print(ry + "[" + rc + "6" + ry + "]version")
 
 
-# vars_______________________________________
-x = 6
-v = "1.1.5"
-run = True
 # programms__________________________________________________
 while run:
 
@@ -84,8 +81,8 @@ while run:
         f = input("file name: ")  # f - filename(str)
         print(rg + 'num of messages(you can use"all"): ' + rr)
 
-        sta = input()  # sta - num of messages(int or str('all'))
-        if sta == 'all':
+        n = input()  # n - num of messages(int or str('all'))
+        if n == 'all':
             num = 0  # num - index of file(int)
             fil = f + ".txt"  # file.txt
             try:  # errorfind
@@ -94,25 +91,25 @@ while run:
                 error(1, fil, x)
             filew = file
             le = len(filew)
-        elif sta != 'all':
+        elif n != 'all':
 
             try:  # errorfind
-                sta = int(sta)  # sta - num of messages(int or str('all'))
+                n = int(n)  # n - num of messages(int or str('all'))
             except:
-                error(2, sta, x)
+                error(2, n, x)
             num = 0
             fil = f + ".txt"
             try:  # errorfind
                 file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'slice'
-                filew = file[:sta]  # slice of file
+                filew = file[:n]  # slice of file
             except:
                 error(1, fil, x)
             le = len(filew)
-            if sta > len(filew):
+            if n > len(filew):
                 error(3, uns, x)
 
-        elif sta == "":
-            error(2, sta, x)
+        elif n == "":
+            error(2, n, x)
         sleep(4)  # wait...
         system('cls||clear')  # cls
 

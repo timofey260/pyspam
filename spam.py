@@ -17,7 +17,7 @@ rc = Fore.CYAN
 ry = Fore.YELLOW
 # vars_______________________________________
 x = 6
-v = "1.1.7"
+v = "1.1.8"
 run = True
 # banners____________________________________________
 
@@ -134,11 +134,12 @@ while run:
         print(rr + b)
         print(rg + 'text: ' + rr)
         g = input()
-        print(rg + 'num of messages: ' + rr)
+        print(rg + 'num of messages(0 = inf.): ' + rr)
 
         try:  # errorfind
             n = int(input())
         except:
+
             error(2, n, x)
         sleep(4)  # wait...
         f = range(n)
@@ -157,10 +158,19 @@ while run:
 
         print('=====process=====')
         print(b, '\nmessage: %1s\ntimes: %1s' % (g, n))
-        for i in f:  # spam messages
-            print(rg + '%1d message send!' % (i + 1))  # print messages in screen
-            pyautogui.write(g)
-            pyautogui.press('enter')
+        if n != 0:
+            for i in f:  # spam messages
+                print(rg + '%1d message send!' % (i + 1))  # print messages in screen
+                pyautogui.write(g)
+                pyautogui.press('enter')
+        elif n == 0:
+            r = True
+            i = 0
+            while r:
+                i = i + 1
+                print(rg + '%1d message send!' % (i))
+                pyautogui.write(g)
+                pyautogui.press('enter')
 
         pyautogui.alert('succefuly send %2d messages!' % n)  # result
     elif name == '3':  # credits

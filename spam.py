@@ -16,7 +16,7 @@ rg = Fore.GREEN
 rc = Fore.CYAN
 ry = Fore.YELLOW
 # vars_______________________________________
-x = 6
+x = 5
 v = "1.1.8"
 run = True
 # banners____________________________________________
@@ -64,129 +64,132 @@ def error(value, result, ver):  # errors: easy moding
 
 def menu():
     print(rr + b)
-    print(ry + "[" + rc + "1" + ry + "]file")  # menu text
-    print(ry + "[" + rc + "2" + ry + "]message")
-    print(ry + "[" + rc + "3" + ry + "]credits")
-    print(ry + "[" + rc + "4" + ry + "]Errorlist")
-    print(ry + "[" + rc + "5" + ry + "]exit")
-    print(ry + "[" + rc + "6" + ry + "]version")
+    print(ry + "[" + rc + "1" + ry + "]mode")  # menu text
+    print(ry + "[" + rc + "2" + ry + "]credits")
+    print(ry + "[" + rc + "3" + ry + "]Errorlist")
+    print(ry + "[" + rc + "4" + ry + "]exit")
+    print(ry + "[" + rc + "5" + ry + "]version")
 
 
 # programms__________________________________________________
 while run:
 
     menu()
-    name = input('>>> ')  # name(int)
+    name = input('>>> ')# name(int)
     if name == '1':
-        f = input("file name: ")  # f - filename(str)
-        print(rg + 'num of messages(you can use"all"): ' + rr)
+        print(ry + "[" + rc + "1" + ry + "]file")  # menu text
+        print(ry + "[" + rc + "2" + ry + "]message")
+        name = input('>>> ')
+        if name == '1':
+            f = input("file name: ")  # f - filename(str)
+            print(rg + 'num of messages(you can use"all"): ' + rr)
 
-        n = input()  # n - num of messages(int or str('all'))
-        if n == 'all':
-            num = 0  # num - index of file(int)
-            fil = f + ".txt"  # file.txt
-            try:  # errorfind
-                file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'all'
-            except:
-                error(1, fil, x)
-            filew = file
-            le = len(filew)
-        elif n != 'all':
+            n = input()  # n - num of messages(int or str('all'))
+            if n == 'all':
+                num = 0  # num - index of file(int)
+                fil = f + ".txt"  # file.txt
+                try:  # errorfind
+                    file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'all'
+                except:
+                    error(1, fil, x)
+                filew = file
+                le = len(filew)
+            elif n != 'all':
 
-            try:  # errorfind
-                n = int(n)  # n - num of messages(int or str('all'))
-            except:
+                try:  # errorfind
+                    n = int(n)  # n - num of messages(int or str('all'))
+                except:
+                    error(2, n, x)
+                num = 0
+                fil = f + ".txt"
+                try:  # errorfind
+                    file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'slice'
+                    filew = file[:n]  # slice of file
+                except:
+                    error(1, fil, x)
+                le = len(filew)
+                if n > len(filew):
+                    error(3, uns, x)
+
+            elif n == "":
                 error(2, n, x)
-            num = 0
-            fil = f + ".txt"
+            sleep(4)  # wait...
+            system('cls||clear')  # cls
+
+            print(ry + b + "\nwait.  ")
+            sleep(0.5)
+            system('cls||clear')
+
+            print(ry + b + "\nwait.. ")
+            sleep(0.5)
+            system('cls||clear')
+
+            print(ry + b + "\nwait...")
+            system('cls||clear')
+            for a in filew:  # spam messages in file
+                print(rg + '%1d message send!' % (num + 1))  # print messages in screen
+                pyautogui.write(a)
+                num = num + 1
+            pyautogui.press('enter')
+            print('=====process=====')
+            pyautogui.alert('succefuly send %2d messages!' % (le))  # result
+        elif name == '2':
+            print(rr + b)
+            print(rg + 'text: ' + rr)
+            g = input()
+            print(rg + 'num of messages(0 = inf.): ' + rr)
+
             try:  # errorfind
-                file = codecs.open(fil, 'r', encoding='utf-8').readlines()  # open file for 'slice'
-                filew = file[:n]  # slice of file
+                n = int(input())
             except:
-                error(1, fil, x)
-            le = len(filew)
-            if n > len(filew):
-                error(3, uns, x)
 
-        elif n == "":
-            error(2, n, x)
-        sleep(4)  # wait...
-        system('cls||clear')  # cls
+                error(2, n, x)
+            sleep(4)  # wait...
+            f = range(n)
+            system('cls||clear')  # cls
 
-        print(ry + b + "\nwait.  ")
-        sleep(0.5)
-        system('cls||clear')
+            print(ry + b + "\nwait.  ")
+            sleep(0.5)
+            system('cls||clear')
 
-        print(ry + b + "\nwait.. ")
-        sleep(0.5)
-        system('cls||clear')
+            print(ry + b + "\nwait.. ")
+            sleep(0.5)
+            system('cls||clear')
 
-        print(ry + b + "\nwait...")
-        system('cls||clear')
-        for a in filew:  # spam messages in file
-            print(rg + '%1d message send!' % (num + 1))  # print messages in screen
-            pyautogui.write(a)
-            num = num + 1
-        pyautogui.press('enter')
-        print('=====process=====')
-        pyautogui.alert('succefuly send %2d messages!' % (le))  # result
-    elif name == '2':
-        print(rr + b)
-        print(rg + 'text: ' + rr)
-        g = input()
-        print(rg + 'num of messages(0 = inf.): ' + rr)
+            print(ry + b + "\nwait...")
+            system('cls||clear')
 
-        try:  # errorfind
-            n = int(input())
-        except:
+            print('=====process=====')
+            print(b, '\nmessage: %1s\ntimes: %1s' % (g, n))
+            if n != 0:
+                for i in f:  # spam messages
+                    print(rg + '%1d message send!' % (i + 1))  # print messages in screen
+                    pyautogui.write(g)
+                    pyautogui.press('enter')
+            elif n == 0:
+                r = True
+                i = 0
+                while r:
+                    i = i + 1
+                    print(rg + '%1d message send!' % (i))
+                    pyautogui.write(g)
+                    pyautogui.press('enter')
 
-            error(2, n, x)
-        sleep(4)  # wait...
-        f = range(n)
-        system('cls||clear')  # cls
-
-        print(ry + b + "\nwait.  ")
-        sleep(0.5)
-        system('cls||clear')
-
-        print(ry + b + "\nwait.. ")
-        sleep(0.5)
-        system('cls||clear')
-
-        print(ry + b + "\nwait...")
-        system('cls||clear')
-
-        print('=====process=====')
-        print(b, '\nmessage: %1s\ntimes: %1s' % (g, n))
-        if n != 0:
-            for i in f:  # spam messages
-                print(rg + '%1d message send!' % (i + 1))  # print messages in screen
-                pyautogui.write(g)
-                pyautogui.press('enter')
-        elif n == 0:
-            r = True
-            i = 0
-            while r:
-                i = i + 1
-                print(rg + '%1d message send!' % (i))
-                pyautogui.write(g)
-                pyautogui.press('enter')
-
-        pyautogui.alert('succefuly send %2d messages!' % n)  # result
-    elif name == '3':  # credits
+            pyautogui.alert('succefuly send %2d messages!' % n)  # result
+    elif name == '2':  # credits
         system('cls||clear')  # cls
         print(cr)
         input()
 
-    elif name == '4':  # errorlist
+    elif name == '3':  # errorlist
         system('cls||clear')  # cls
         print(err)
         input()
 
-    elif name == '5':  # exit
+    elif name == '4':  # exit
         run = False
 
-    elif name == '6':  # exit
+    elif name == '5':  # exit
         system('cls||clear')  # cls
         print(v)
 

@@ -11,13 +11,7 @@ used to spam _messages_ and _files_ by windows10 code
 
 > $pip install pyautogui
 
-* **time**:
-
->  $pip install time
-
 ---
-# ps
-if time don`t download, continue
 
 # for noobs in python
 download a exe file

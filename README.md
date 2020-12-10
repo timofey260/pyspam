@@ -1,8 +1,8 @@
 # pyspam
 Spam for pc.
 
-used to spam messages by ctrl + v
-
+used to spam _messages_ and _files_ by windows10 code
+---
 
 # need
  * **pyautogui**:
@@ -12,10 +12,10 @@ used to spam messages by ctrl + v
 * **time**:
 
 >  $pip install time
-  
+---
 # ps
 if time don`t download, continue
-
+---
 # for noobs in python
 download a exe file
 

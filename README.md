@@ -5,11 +5,11 @@ used to spam messages by ctrl + v
 
 
 # need
-pyautogui:
+ * **pyautogui**:
 
-  $pip install pyautogui
+> $pip install pyautogui
 
-time:
+* **time**:
 
   $pip install time
   

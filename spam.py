@@ -17,7 +17,8 @@ rc = Fore.CYAN
 ry = Fore.YELLOW
 # vars_______________________________________
 x = 5
-v = "1.1.8"
+modes = 2
+v = "1.1.9"
 run = True
 # banners____________________________________________
 
@@ -176,6 +177,8 @@ while run:
                     pyautogui.press('enter')
 
             pyautogui.alert('succefuly send %2d messages!' % n)  # result
+        else:
+            error(4, name, modes)
     elif name == '2':  # credits
         system('cls||clear')  # cls
         print(cr)

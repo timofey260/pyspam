@@ -18,7 +18,7 @@ ry = Fore.YELLOW
 # vars_______________________________________
 x = 5
 modes = 2
-v = "1.1.9"
+v = "1.2.0"
 run = True
 # banners____________________________________________
 
@@ -62,14 +62,15 @@ def error(value, result, ver):  # errors: easy moding
     input()
     exit()
 
-
+def menud(pa1, pa2):
+    print(ry + "[" + rc + str(pa1) + ry + "] " + pa2)
 def menu():
     print(rr + b)
-    print(ry + "[" + rc + "1" + ry + "]mode")  # menu text
-    print(ry + "[" + rc + "2" + ry + "]credits")
-    print(ry + "[" + rc + "3" + ry + "]Errorlist")
-    print(ry + "[" + rc + "4" + ry + "]exit")
-    print(ry + "[" + rc + "5" + ry + "]version")
+    menud(1, 'mode')  # menu text
+    menud(2, 'credits')
+    menud(3, 'Errorlist')
+    menud(4, 'exit')
+    menud(5, 'version')
 
 
 # programms__________________________________________________
@@ -78,10 +79,12 @@ while run:
     menu()
     name = input('>>> ')# name(int)
     if name == '1':
-        print(ry + "[" + rc + "1" + ry + "]file")  # menu text
-        print(ry + "[" + rc + "2" + ry + "]message")
+        menud(1, 'file')  # menu text
+        menud(2, 'message')
         name = input('>>> ')
         if name == '1':
+
+
             f = input("file name: ")  # f - filename(str)
             print(rg + 'num of messages(you can use"all"): ' + rr)
 

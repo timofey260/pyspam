@@ -18,10 +18,12 @@ ry = Fore.YELLOW
 # vars_______________________________________
 x = 5
 modes = 2
-v = "1.2.1"
+v = "1.2.2"
 run = True
 # banners____________________________________________
-
+log = ('1.2.2:'
+       '-num_message mode'
+       '-this log is added')
 b = ('_____   +                       |||||||||||||||||| \n'
      '  |           /\\      /\\        |||||(0)|||(0)|||| \n'
      '  |     |    /  \\    /  \\       |||||||||||||||||| \n'
@@ -71,6 +73,7 @@ def menu():
     menud(3, 'Errorlist')
     menud(4, 'exit')
     menud(5, 'version')
+    menud(6, 'log')
 
 # programms__________________________________________________
 while run:
@@ -240,6 +243,10 @@ while run:
     elif name == '5':  # exit
         system('cls||clear')  # cls
         print(v)
-
+        input()
+    elif name == '6':  # exit
+        system('cls||clear')  # cls
+        print(log)
+        input()
     else:
         error(4, name, x)

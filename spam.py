@@ -18,7 +18,7 @@ ry = Fore.YELLOW
 # vars_______________________________________
 x = 5
 modes = 2
-v = "1.2.0"
+v = "1.2.1"
 run = True
 # banners____________________________________________
 
@@ -72,7 +72,6 @@ def menu():
     menud(4, 'exit')
     menud(5, 'version')
 
-
 # programms__________________________________________________
 while run:
 
@@ -81,6 +80,7 @@ while run:
     if name == '1':
         menud(1, 'file')  # menu text
         menud(2, 'message')
+        menud(3, 'num mesage')
         name = input('>>> ')
         if name == '1':
 
@@ -135,7 +135,7 @@ while run:
                 pyautogui.write(a)
                 num = num + 1
             pyautogui.press('enter')
-            print('=====process=====')
+            print('=====process=====#file')
             pyautogui.alert('succefuly send %2d messages!' % (le))  # result
         elif name == '2':
             print(rr + b)
@@ -163,7 +163,7 @@ while run:
             print(ry + b + "\nwait...")
             system('cls||clear')
 
-            print('=====process=====')
+            print('=====process=====#message')
             print(b, '\nmessage: %1s\ntimes: %1s' % (g, n))
             if n != 0:
                 for i in f:  # spam messages
@@ -180,6 +180,48 @@ while run:
                     pyautogui.press('enter')
 
             pyautogui.alert('succefuly send %2d messages!' % n)  # result
+        elif name == '3':
+            print(rr + b)
+            print(rg + 'num of messages(0 = inf.): ' + rr)
+
+            try:  # errorfind
+                n = int(input())
+            except:
+
+                error(2, n, x)
+            sleep(4)  # wait...
+            f = range(n)
+            system('cls||clear')  # cls
+
+            print(ry + b + "\nwait.  ")
+            sleep(0.5)
+            system('cls||clear')
+
+            print(ry + b + "\nwait.. ")
+            sleep(0.5)
+            system('cls||clear')
+
+            print(ry + b + "\nwait...")
+            system('cls||clear')
+
+            print('=====process=====#num_message')
+            print(b, '\ntimes: %1s' % (n))
+            if n != 0:
+                for i in f:  # spam messages
+                    print(rg + '%1d message send!' % (i + 1))  # print messages in screen
+                    pyautogui.write(str(f[i] + 1))
+                    pyautogui.press('enter')
+                    i = i + 1
+
+            elif n == 0:
+                r = True
+                i = 0
+                while r:
+                    i = i + 1
+                    print(rg + '%1d message send!' % (i))
+                    pyautogui.write(str(f[i]))
+                    pyautogui.press('enter')
+
         else:
             error(4, name, modes)
     elif name == '2':  # credits

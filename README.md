@@ -1,9 +1,9 @@
 1.2.2
 ============
 # log
--num_messages added
+1. -num_messages added
 
--log added
+2. -log added
 
 # pyspam
 

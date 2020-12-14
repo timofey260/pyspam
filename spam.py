@@ -21,9 +21,9 @@ modes = 2
 v = "1.2.2"
 run = True
 # banners____________________________________________
-log = ('1.2.2:'
-       '-num_message mode'
-       '-this log is added')
+log = ('1.2.2:\n'
+       '-num_message mode\n'
+       '-this log is added\n')
 b = ('_____   +                       |||||||||||||||||| \n'
      '  |           /\\      /\\        |||||(0)|||(0)|||| \n'
      '  |     |    /  \\    /  \\       |||||||||||||||||| \n'

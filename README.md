@@ -1,9 +1,7 @@
-1.2.2
+1.2.3
 ============
 # log
-* -num_messages added
-
-* -log added
+* -num_messages upgraded
 
 # pyspam
 

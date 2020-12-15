@@ -2,9 +2,10 @@
 # Github: https://github.com/timofey260/pyspam
 # site: https://timofey26s.tilda.ws
 # import______________________________________________
+import codecs
+import pyautogui
 from os import system  # system use for clear messages
 from time import sleep  # sleep block on load{wait...}
-import codecs, pyautogui
 from colorama import Fore, init  # for colored text
 
 # inits________________________________________________
@@ -16,14 +17,13 @@ rg = Fore.GREEN
 rc = Fore.CYAN
 ry = Fore.YELLOW
 # vars_______________________________________
-x = 5
-modes = 2
-v = "1.2.2"
+x = 6
+modes = 3
+v = "1.2.3"
 run = True
 # banners____________________________________________
-log = ('1.2.2:\n'
-       '-num_message mode\n'
-       '-this log is added\n')
+log = ('1.2.3:\n'
+       '-num_message mode upgrade\n')
 b = ('_____   +                       |||||||||||||||||| \n'
      '  |           /\\      /\\        |||||(0)|||(0)|||| \n'
      '  |     |    /  \\    /  \\       |||||||||||||||||| \n'
@@ -41,9 +41,10 @@ err = (rr + ' _________________________________________________________ \n'
             '|1. FileError: file not found!                            |\n'
             '|2. NumError: {str} not a number!                         |\n'
             '|3. IndexError: index out of range!                       |\n'
-            '|4. TypeError: {str} is not 1 - %1s!                        |\n' 
+            '|4. TypeError: {str} is not 1 - %1s!                        |\n'
             '|5. ListError: Error not found! correct def error()       |\n'
-            '|_________________________________________________________|\n' %(x))
+            '|_________________________________________________________|\n' % (x))
+
 
 # deffs___________________________________________
 def error(value, result, ver):  # errors: easy moding
@@ -64,8 +65,11 @@ def error(value, result, ver):  # errors: easy moding
     input()
     exit()
 
+
 def menud(pa1, pa2):
     print(ry + "[" + rc + str(pa1) + ry + "] " + pa2)
+
+
 def menu():
     print(rr + b)
     menud(1, 'mode')  # menu text
@@ -75,18 +79,18 @@ def menu():
     menud(5, 'version')
     menud(6, 'log')
 
+
 # programms__________________________________________________
 while run:
 
     menu()
-    name = input('>>> ')# name(int)
+    name = input('>>> ')  # name(int)
     if name == '1':
         menud(1, 'file')  # menu text
         menud(2, 'message')
-        menud(3, 'num mesage')
+        menud(3, 'num_message')
         name = input('>>> ')
         if name == '1':
-
 
             f = input("file name: ")  # f - filename(str)
             print(rg + 'num of messages(you can use"all"): ' + rr)
@@ -185,10 +189,16 @@ while run:
             pyautogui.alert('succefuly send %2d messages!' % n)  # result
         elif name == '3':
             print(rr + b)
+            print(rg + 'prefix: ' + rr)
+            g = str(input())
+
+            print(rg + 'suffix: ' + rr)
+            su = str(input())
             print(rg + 'num of messages(0 = inf.): ' + rr)
 
             try:  # errorfind
-                n = int(input())
+                n = input()
+                n = int(n)
             except:
 
                 error(2, n, x)
@@ -207,22 +217,21 @@ while run:
             print(ry + b + "\nwait...")
             system('cls||clear')
 
-            print('=====process=====#num_message')
-            print(b, '\ntimes: %1s' % (n))
+            print('=====process=====num_message')
+            print(b, '\nprefix: %1s\nsuffix %1s\ntimes: %1s' % (g, su, n))
             if n != 0:
                 for i in f:  # spam messages
                     print(rg + '%1d message send!' % (i + 1))  # print messages in screen
-                    pyautogui.write(str(f[i] + 1))
+                    pyautogui.write('%1s %1s %1s' %(g, str(i), su))
                     pyautogui.press('enter')
                     i = i + 1
-
             elif n == 0:
                 r = True
                 i = 0
                 while r:
                     i = i + 1
                     print(rg + '%1d message send!' % (i))
-                    pyautogui.write(str(f[i]))
+                    pyautogui.write('%1s %1s %1s' %(g, str(i), su))
                     pyautogui.press('enter')
 
         else:

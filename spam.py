@@ -222,7 +222,8 @@ while run:
             if n != 0:
                 for i in f:  # spam messages
                     print(rg + '%1d message send!' % (i + 1))  # print messages in screen
-                    pyautogui.write('%1s %1s %1s' %(g, str(i), su))
+                    fo = ('%1s %1s %1s' %(g, str(i), su))
+                    pyautogui.write(fo)
                     pyautogui.press('enter')
                     i = i + 1
             elif n == 0:
@@ -231,7 +232,8 @@ while run:
                 while r:
                     i = i + 1
                     print(rg + '%1d message send!' % (i))
-                    pyautogui.write('%1s %1s %1s' %(g, str(i), su))
+                    fo =('%1s %1s %1s' %(g, str(i), su))
+                    pyautogui.write(fo)
                     pyautogui.press('enter')
 
         else:

@@ -78,6 +78,13 @@ def menu():
     menud(4, 'exit')
     menud(5, 'version')
     menud(6, 'log')
+import pyperclip, keyboard
+
+def paste(text: str):    
+    buffer = pyperclip.paste()
+    pyperclip.copy(text)
+    keyboard.press_and_release('ctrl + v')
+    pyperclip.copy(buffer)
 
 
 # programms__________________________________________________
@@ -139,7 +146,7 @@ while run:
             system('cls||clear')
             for a in filew:  # spam messages in file
                 print(rg + '%1d message send!' % (num + 1))  # print messages in screen
-                pyautogui.write(a)
+                paste(a)
                 num = num + 1
             pyautogui.press('enter')
             print('=====process=====#file')

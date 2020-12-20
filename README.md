@@ -1,7 +1,7 @@
-1.2.3
+1.2.4
 ============
 # log
-* -num_messages upgraded
+*  you can use all text(1.2.3 & earler: you can use only english)
 
 # pyspam
 

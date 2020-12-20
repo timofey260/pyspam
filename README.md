@@ -7,7 +7,7 @@
 
 Spam for pc.
 
-used to spam _messages_ and _files_ by windows10 code
+used to spam _messages_ and _files_ by ctrl + v code
 
 ---
 

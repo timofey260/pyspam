@@ -15,9 +15,13 @@ used to spam _messages_ and _files_ by windows10 code
  
 
 > $pip install pyautogui
+
 > $pip install keyboard
+
 > $pip install colorama
+
 > $pip install pyperclip
+
 ---
 
 # for noobs in python

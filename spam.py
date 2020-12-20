@@ -19,11 +19,11 @@ ry = Fore.YELLOW
 # vars_______________________________________
 x = 6
 modes = 3
-v = "1.2.3"
+v = "1.2.4"
 run = True
 # banners____________________________________________
-log = ('1.2.3:\n'
-       '-num_message mode upgrade\n')
+log = ('1.2.4:\n'
+       '-you can use all text(1.2.3 & earler: you can use only english)\n')
 b = ('_____   +                       |||||||||||||||||| \n'
      '  |           /\\      /\\        |||||(0)|||(0)|||| \n'
      '  |     |    /  \\    /  \\       |||||||||||||||||| \n'

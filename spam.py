@@ -80,11 +80,9 @@ def menu():
     menud(6, 'log')
 import pyperclip, keyboard
 
-def paste(text: str):    
-    buffer = pyperclip.paste()
+def paste(text):
     pyperclip.copy(text)
     keyboard.press_and_release('ctrl + v')
-    pyperclip.copy(buffer)
 
 
 # programms__________________________________________________
@@ -182,7 +180,7 @@ while run:
             if n != 0:
                 for i in f:  # spam messages
                     print(rg + '%1d message send!' % (i + 1))  # print messages in screen
-                    pyautogui.write(g)
+                    paste(g)
                     pyautogui.press('enter')
             elif n == 0:
                 r = True
@@ -190,7 +188,7 @@ while run:
                 while r:
                     i = i + 1
                     print(rg + '%1d message send!' % (i))
-                    pyautogui.write(g)
+                    paste(g)
                     pyautogui.press('enter')
 
             pyautogui.alert('succefuly send %2d messages!' % n)  # result
@@ -230,7 +228,7 @@ while run:
                 for i in f:  # spam messages
                     print(rg + '%1d message send!' % (i + 1))  # print messages in screen
                     fo = ('%1s %1s %1s' %(g, str(i), su))
-                    pyautogui.write(fo)
+                    paste(g)
                     pyautogui.press('enter')
                     i = i + 1
             elif n == 0:
@@ -240,7 +238,7 @@ while run:
                     i = i + 1
                     print(rg + '%1d message send!' % (i))
                     fo =('%1s %1s %1s' %(g, str(i), su))
-                    pyautogui.write(fo)
+                    paste(g)
                     pyautogui.press('enter')
 
         else:

@@ -1,7 +1,7 @@
-1.2.4
+1.2.5
 ============
 # log
-*  you can use all text(1.2.3 & earler: you can use only english)
+*  interval added
 
 # pyspam
 

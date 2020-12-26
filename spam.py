@@ -19,11 +19,11 @@ ry = Fore.YELLOW
 # vars_______________________________________
 x = 6
 modes = 3
-v = "1.2.4"
+v = "1.2.5"
 run = True
 # banners____________________________________________
-log = ('1.2.4:\n'
-       '-you can use all text(1.2.3 & earler: you can use only english)\n')
+log = ('1.2.5:\n'
+       '-interval added\n')
 b = ('_____   +                       |||||||||||||||||| \n'
      '  |           /\\      /\\        |||||(0)|||(0)|||| \n'
      '  |     |    /  \\    /  \\       |||||||||||||||||| \n'
@@ -101,6 +101,11 @@ while run:
             print(rg + 'num of messages(you can use"all"): ' + rr)
 
             n = input()  # n - num of messages(int or str('all'))
+            try:
+                inte = int(input("interval[sec]: "))
+
+            except:
+                error(2, inte, ver)
             if n == 'all':
                 num = 0  # num - index of file(int)
                 fil = f + ".txt"  # file.txt
@@ -143,10 +148,11 @@ while run:
             print(ry + b + "\nwait...")
             system('cls||clear')
             for a in filew:  # spam messages in file
+                sleep(inte)
                 print(rg + '%1d message send!' % (num + 1))  # print messages in screen
                 paste(a)
                 num = num + 1
-            pyautogui.press('enter')
+                pyautogui.press('enter')
             print('=====process=====#file')
             pyautogui.alert('succefuly send %2d messages!' % (le))  # result
         elif name == '2':
@@ -154,7 +160,11 @@ while run:
             print(rg + 'text: ' + rr)
             g = input()
             print(rg + 'num of messages(0 = inf.): ' + rr)
+            try:
+                inte = int(input("interval[sec]: "))
 
+            except:
+                error(2, inte, ver)
             try:  # errorfind
                 n = int(input())
             except:
@@ -179,6 +189,7 @@ while run:
             print(b, '\nmessage: %1s\ntimes: %1s' % (g, n))
             if n != 0:
                 for i in f:  # spam messages
+                    sleep(inte)
                     print(rg + '%1d message send!' % (i + 1))  # print messages in screen
                     paste(g)
                     pyautogui.press('enter')
@@ -187,6 +198,7 @@ while run:
                 i = 0
                 while r:
                     i = i + 1
+                    sleep(inte)
                     print(rg + '%1d message send!' % (i))
                     paste(g)
                     pyautogui.press('enter')
@@ -200,7 +212,11 @@ while run:
             print(rg + 'suffix: ' + rr)
             su = str(input())
             print(rg + 'num of messages(0 = inf.): ' + rr)
+            try:
+                inte = int(input("interval[sec]: "))
 
+            except:
+                error(2, inte, ver)
             try:  # errorfind
                 n = input()
                 n = int(n)
@@ -226,6 +242,7 @@ while run:
             print(b, '\nprefix: %1s\nsuffix %1s\ntimes: %1s' % (g, su, n))
             if n != 0:
                 for i in f:  # spam messages
+                    sleep(inte)
                     print(rg + '%1d message send!' % (i + 1))  # print messages in screen
                     fo = ('%1s %1s %1s' %(g, str(i), su))
                     paste(g)
@@ -235,6 +252,7 @@ while run:
                 r = True
                 i = 0
                 while r:
+                    sleep(inte)
                     i = i + 1
                     print(rg + '%1d message send!' % (i))
                     fo =('%1s %1s %1s' %(g, str(i), su))

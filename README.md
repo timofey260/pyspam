@@ -1,7 +1,7 @@
-1.2.5
+1.2.6
 ============
 # log
-*  interval added
+*  fix
 
 # pyspam
 

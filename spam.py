@@ -19,11 +19,11 @@ ry = Fore.YELLOW
 # vars_______________________________________
 x = 6
 modes = 3
-v = "1.2.5"
+v = "1.2.6"
 run = True
 # banners____________________________________________
-log = ('1.2.5:\n'
-       '-interval added\n')
+log = ('1.2.6:\n'
+       '-fix\n')
 b = ('_____   +                       |||||||||||||||||| \n'
      '  |           /\\      /\\        |||||(0)|||(0)|||| \n'
      '  |     |    /  \\    /  \\       |||||||||||||||||| \n'
@@ -64,7 +64,6 @@ def error(value, result, ver):  # errors: easy moding
         print('ListError: Error not found! correct def error()')
     input()
     exit()
-
 
 def menud(pa1, pa2):
     print(ry + "[" + rc + str(pa1) + ry + "] " + pa2)
@@ -159,12 +158,12 @@ while run:
             print(rr + b)
             print(rg + 'text: ' + rr)
             g = input()
-            print(rg + 'num of messages(0 = inf.): ' + rr)
             try:
                 inte = int(input("interval[sec]: "))
 
             except:
                 error(2, inte, ver)
+            print(rg + 'num of messages(0 = inf.): ' + rr)
             try:  # errorfind
                 n = int(input())
             except:
